@@ -1,0 +1,40 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.4'
+	id 'io.spring.dependency-management' version '1.1.0'
+	
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.postgresql:postgresql'
+	implementation 'jakarta.persistence:jakarta.persistence-api:3.0.0'
+	implementation 'com.h2database:h2'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.6.4'
+	// devtools is an  tools.Not reqired restart the server for every change only save the file and automatically restart the server
+	implementation 'org.springframework.boot:spring-boot-devtools:3.1.0'
+
+
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
